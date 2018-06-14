@@ -32,7 +32,12 @@ doa17LaunchEnvironment.with{
     env('PROJECT_NAME', projectFolderName)
   }
   parameters{
-    stringParam("KEY",'Description',"Value")
+    stringParam("AWS_REGION",'us-east-1',"Default AWS Region")
+    stringParam("ENVIRONMENT_NAME",'',"Name of your Environment")
+    stringParam("WEB_APP_PROFILE",'',"Web App Instance Profile from DevOps-Workshop-Networking stack")
+    stringParam("WEB_APP_SG",'',"Web App SG from DevOps-Workshop-Networking stack")
+    stringParam("PUBLIC_SUBNET",'',"Public Subnet from DevOps-Workshop-Networking stack")
+    stringParam("CODE_DEPLOY_ARN",'',"IAM Role ARN from DevopsWorkshop-raem-roles stack")
   }
   wrappers {
     preBuildCleanup()
@@ -93,6 +98,11 @@ doa17CreateApplication.with{
   }
   parameters{
     stringParam("AWS_REGION",'',"Default AWS Region")
+    stringParam("ENVIRONMENT_NAME",'',"Name of your Environment")
+    stringParam("WEB_APP_PROFILE",'',"Web App Instance Profile from DevOps-Workshop-Networking stack")
+    stringParam("WEB_APP_SG",'',"Web App SG from DevOps-Workshop-Networking stack")
+    stringParam("PUBLIC_SUBNET",'',"Public Subnet from DevOps-Workshop-Networking stack")
+    stringParam("CODE_DEPLOY_ARN",'',"IAM Role ARN from DevopsWorkshop-raem-roles stack")
   }
   wrappers {
     preBuildCleanup()
@@ -133,6 +143,11 @@ doa17CreateDevelopmentGroup.with{
   }
   parameters{
     stringParam("AWS_REGION",'',"Default AWS Region")
+    stringParam("ENVIRONMENT_NAME",'',"Name of your Environment")
+    stringParam("WEB_APP_PROFILE",'',"Web App Instance Profile from DevOps-Workshop-Networking stack")
+    stringParam("WEB_APP_SG",'',"Web App SG from DevOps-Workshop-Networking stack")
+    stringParam("PUBLIC_SUBNET",'',"Public Subnet from DevOps-Workshop-Networking stack")
+    stringParam("CODE_DEPLOY_ARN",'',"IAM Role ARN from DevopsWorkshop-raem-roles stack")
   }
   wrappers {
     preBuildCleanup()
@@ -173,6 +188,11 @@ doa17CreateProductionGroup.with{
   }
   parameters{
     stringParam("AWS_REGION",'',"Default AWS Region")
+    stringParam("ENVIRONMENT_NAME",'',"Name of your Environment")
+    stringParam("WEB_APP_PROFILE",'',"Web App Instance Profile from DevOps-Workshop-Networking stack")
+    stringParam("WEB_APP_SG",'',"Web App SG from DevOps-Workshop-Networking stack")
+    stringParam("PUBLIC_SUBNET",'',"Public Subnet from DevOps-Workshop-Networking stack")
+    stringParam("CODE_DEPLOY_ARN",'',"IAM Role ARN from DevopsWorkshop-raem-roles stack")
   }
   wrappers {
     preBuildCleanup()
